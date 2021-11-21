@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const ListItem = () => {
+const ListItem = (props) => {
   return (
     <View style={styles.itemContainer}>
       <View style={styles.leftContainer}>
@@ -43,7 +43,7 @@ const ListItem = () => {
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.
         </Text>
-        <Text style={styles.subText}>React Native</Text>
+        <Text style={styles.subText}>{props.author}</Text>
       </View>
     </View>
   );
