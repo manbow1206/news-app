@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, FlatList, SafeAreaView, Platform } from 'react-native';
 import Constants from 'expo-constants';
@@ -12,10 +11,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
 });
-
 export default function HomeScreen() {
   const [articles, setArticles] = useState([]);
   useEffect(() => {
@@ -25,7 +22,7 @@ export default function HomeScreen() {
   const fetchArticles = async () => {
     try {
       const response = await axios.get(URL);
-      setArticles(response.data.articles)
+      setArticles(response.data.articles);
       console.log(response);
     } catch (error) {
       console.error(error);
