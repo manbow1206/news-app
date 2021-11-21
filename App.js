@@ -2,6 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
+import ListItem from './components/ListItem.js';
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -23,7 +25,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     padding: 10,
-    justifyContent: "space-between"
+    justifyContent: 'space-between',
   },
   text: {
     fontSize: 16,
@@ -37,23 +39,7 @@ const styles = StyleSheet.create({
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.itemContainer}>
-        <View style={styles.leftContainer}>
-          <Image
-            style={{ width: 100, height: 100 }}
-            source={{ uri: 'https://picsum.photos/200/300' }}
-          ></Image>
-        </View>
-        <View style={styles.rightContainer}>
-          <Text numberOfLines={3} style={styles.text}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </Text>
-          <Text style={styles.subText}>React Native</Text>
-        </View>
-      </View>
+      <ListItem />
     </View>
   );
 }
