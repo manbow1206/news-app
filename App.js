@@ -42,6 +42,7 @@ export default function App() {
     const timer = setTimeout(() => {
       setArticles(dummyArticles);
     }, 3000);
+    return () => clearTimeout(timer);
   }, []);
   return (
     <SafeAreaView style={styles.container}>
