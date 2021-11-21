@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, FlatList, SafeAreaView, Platform } from 'react-native';
 import dummyArticles from './dummies/articles.json';
 
@@ -37,7 +37,12 @@ const styles = StyleSheet.create({
 });
 
 export default function App() {
-  const [articles, setSrticles] = useState(dummyArticles);
+  const [articles, setArticles] = useState([]);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setArticles(dummyArticles);
+    }, 3000);
+  }, []);
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
