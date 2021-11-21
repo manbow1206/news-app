@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, FlatList, SafeAreaView, Platform } from 'react-native';
 import dummyArticles from './dummies/articles.json';
+import Constants from 'expo-constants';
 
 import ListItem from './components/ListItem.js';
 
@@ -39,6 +40,7 @@ const styles = StyleSheet.create({
 export default function App() {
   const [articles, setArticles] = useState([]);
   useEffect(() => {
+    alert(Constants.manifest.extra.newsApiKey);
     const timer = setTimeout(() => {
       setArticles(dummyArticles);
     }, 3000);
