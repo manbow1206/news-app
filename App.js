@@ -17,11 +17,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   leftContainer: {
-    backgroundColor: 'yellow',
     width: 100,
   },
   rightContainer: {
-    backgroundColor: 'blue',
     flex: 1,
   },
 });
@@ -36,7 +34,15 @@ export default function App() {
             source={{ uri: 'https://picsum.photos/200/300' }}
           ></Image>
         </View>
-        <View style={styles.rightContainer} />
+        <View style={styles.rightContainer}>
+          <Text numberOfLines={3}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </Text>
+          <Text>React Native</Text>
+        </View>
       </View>
     </View>
   );
