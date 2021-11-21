@@ -11,9 +11,7 @@ const styles = StyleSheet.create({
   },
 });
 
-// const URL = `https://newsapi.org/v2/top-headlines?country=jp&category=business&apiKey=${Constants.manifest.extra.newsApiKey}`;
-// const URL = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${Constants.manifest.extra.newsApiKey}`;
-const URL = `https://newsapi.org/v2/everything?q=tesla&from=2021-10-21&sortBy=publishedAt&apiKey=Z${Constants.manifest.extra.newsApiKey}`;
+const URL = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${Constants.manifest.extra.newsApiKey}`;
 
 export default function HomeScreen(props) {
   const [articles, setArticles] = useState([]);
