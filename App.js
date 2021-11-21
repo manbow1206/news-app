@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, View, FlatList, SafeAreaView } from 'react-native';
-import articles from './dummies/articles.json';
+import React, { useState } from 'react';
+import { StyleSheet, FlatList, SafeAreaView, Platform } from 'react-native';
+import dummyArticles from './dummies/articles.json';
 
 import ListItem from './components/ListItem.js';
 
@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
   itemContainer: {
     height: 100,
@@ -36,6 +37,7 @@ const styles = StyleSheet.create({
 });
 
 export default function App() {
+  const [articles, setSrticles] = useState(dummyArticles);
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
