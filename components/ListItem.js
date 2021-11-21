@@ -27,14 +27,16 @@ const styles = StyleSheet.create({
   },
 });
 
-const ListItem = ({imageUrl, title, author}) => {
+const ListItem = ({ imageUrl, title, author }) => {
   return (
     <View style={styles.itemContainer}>
       <View style={styles.leftContainer}>
-        <Image
-          style={{ width: 100, height: 100 }}
-          source={{ uri: imageUrl }}
-        ></Image>
+        {!!imageUrl && (
+          <Image
+            style={{ width: 100, height: 100 }}
+            source={{ uri: imageUrl }}
+          />
+        )}
       </View>
       <View style={styles.rightContainer}>
         <Text numberOfLines={3} style={styles.text}>
