@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const ListItem = ({ imageUrl, title, author }) => {
+const ListItem = ({imageUrl, title, author}) => {
   return (
     <View style={styles.itemContainer}>
       <View style={styles.leftContainer}>
