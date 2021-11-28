@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, Text } from 'react-native';
+import { StyleSheet, SafeAreaView, Text, FlatList } from 'react-native';
+import ListItem from '../components/ListItem';
+import { useSelector } from 'react-redux';
 
 const styles = StyleSheet.create({
   container: {
@@ -9,9 +11,24 @@ const styles = StyleSheet.create({
 });
 
 const ClipScreen = () => {
+  const user = useSelector((state) => state.user);
+  console.log(user);
+
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Clip Screen</Text>
+      <FlatList
+        data={user}
+        renderItem={({ item }) => (
+          <ListItem
+            imageUrl={item.urlToImage}
+            title={item.title}
+            author={item.author}
+            onPress={() =>
+              props.navigation.navigate('Article', { article: item })
+            }
+          />
+        )}
+      />
     </SafeAreaView>
   );
 };
