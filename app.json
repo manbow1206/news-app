@@ -13,9 +13,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -29,7 +27,7 @@
       "favicon": "./assets/favicon.png"
     },
     "extra": {
-     "newsApiKey": "e2170b6fa0d145209288395c9120b2b1"
+      "newsApiKey": "e2170b6fa0d145209288395c9120b2b1"
     }
   }
 }
